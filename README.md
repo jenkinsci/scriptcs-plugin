@@ -1,7 +1,7 @@
 ScriptCS plugin
 ===============
 
-ScriptCS lets you use C# as a scripting langugae. More information and tutorials can be found at http://scriptcs.net/
+ScriptCS lets you use C# as a scripting language. More information and tutorials can be found at http://scriptcs.net/
 
 Configuration
 =============
