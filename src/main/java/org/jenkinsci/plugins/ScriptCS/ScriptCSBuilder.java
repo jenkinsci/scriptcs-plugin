@@ -132,6 +132,7 @@ public class ScriptCSBuilder extends Builder {
                     customScriptFile.delete();
                 }
             } catch (Exception ex2) {
+                listener.getLogger().println("Unable to delete temporary file");
             }
         }
     }
