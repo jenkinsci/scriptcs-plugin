@@ -26,4 +26,20 @@
     </pluginRepository>
   </pluginRepositories>
 
+  <scm>
+    <connection>scm:git:ssh://github.com/jenkinsci/scriptcs-plugin.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/jenkinsci/scriptcs-plugin.git</developerConnection>
+    <url>https://github.com/jenkinsci/scriptcs-plugin</url>
+  </scm>
+
+  <url>https://wiki.jenkins-ci.org/display/JENKINS/ScriptCS</url>
+
+  <developers>
+    <developer>
+      <id>daveoggy</id>
+      <name>Dave Ogden</name>
+      <email>daveoggy@gmail.com</email>
+    </developer>
+  </developers>
+
 </project>
