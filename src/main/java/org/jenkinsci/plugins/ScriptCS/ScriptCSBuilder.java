@@ -1,5 +1,6 @@
 package org.jenkinsci.plugins.ScriptCS;
 
+import com.iwombat.util.StringUtil;
 import hudson.Launcher;
 import hudson.Extension;
 import hudson.Util;
@@ -20,8 +21,11 @@ import org.kohsuke.stapler.QueryParameter;
 import javax.servlet.ServletException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.UUID;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import org.apache.commons.lang.StringUtils;
 
 /**
@@ -86,6 +90,8 @@ public class ScriptCSBuilder extends Builder {
     public boolean perform(AbstractBuild build, Launcher launcher, BuildListener listener) throws IOException, InterruptedException {
 
         ArgumentListBuilder args = new ArgumentListBuilder();
+        
+        VariableResolver<String> vr = build.getBuildVariableResolver();
 
         String execName = getDescriptor().scriptcsexe;
 
@@ -113,7 +119,13 @@ public class ScriptCSBuilder extends Builder {
 
         if (StringUtils.isNotEmpty(arguments)) {
             args.add("--");
-            args.add(arguments);
+            
+            Pattern pt = Pattern.compile("([^\"]\\S*|\".+?\")\\s*");
+            Matcher m = pt.matcher(arguments);
+            while (m.find())
+            {
+                args.add(m.group(1));
+            }
         }
 
         //Try to execute the command
