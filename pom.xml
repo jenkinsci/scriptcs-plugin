@@ -7,7 +7,7 @@
   </parent>
 
   <artifactId>ScriptCS</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>y</version>
   <packaging>hpi</packaging>
   <name>ScriptCS plugin</name>
   <description>ntegrates with ScriptCS by allowing you to link to an existing .csx file, or directly write C# into the text box in Jenkins.</description>
