@@ -26,32 +26,32 @@ Arguments: C:\Windows C:\Windows\System32
 
 Custom Script:
 
-foreach (var path in ScriptArgs)
-{
-	Console.WriteLine("List of files in \"{0}\"", path);
-	var files = Directory.GetFiles(path).Take(5);
-	foreach (var file in files)
+	foreach (var path in ScriptArgs)
 	{
-		Console.WriteLine(file);
+		Console.WriteLine("List of files in \"{0}\"", path);
+		var files = Directory.GetFiles(path).Take(5);
+		foreach (var file in files)
+		{
+			Console.WriteLine(file);
+		}
+		Console.WriteLine();
 	}
-	Console.WriteLine();
-}
 
 *Approximate Expected Console Output:*
 
-Using custom script
-Executing command: c:\Chocolatey\lib\scriptcs.0.8.1\tools\scriptcs\scriptcs.exe C:\WINDOWS\TEMP\ScriptCS_6237919950225467577.csx -- C:\Windows C:\Windows\System32
-[workspace] $ c:\Chocolatey\lib\scriptcs.0.8.1\tools\scriptcs\scriptcs.exe C:\WINDOWS\TEMP\ScriptCS_6237919950225467577.csx -- C:\Windows C:\Windows\System32
-List of files in "C:\Windows"
-C:\Windows\bfsvc.exe
-C:\Windows\bootstat.dat
-C:\Windows\comsetup.log
-C:\Windows\diagerr.xml
-C:\Windows\diagwrn.xml
+	Using custom script
+	Executing command: c:\Chocolatey\lib\scriptcs.0.8.1\tools\scriptcs\scriptcs.exe C:\WINDOWS\TEMP\ScriptCS_6237919950225467577.csx -- C:\Windows C:\Windows\System32
+	[workspace] $ c:\Chocolatey\lib\scriptcs.0.8.1\tools\scriptcs\scriptcs.exe C:\WINDOWS\TEMP\ScriptCS_6237919950225467577.csx -- C:\Windows C:\Windows\System32
+	List of files in "C:\Windows"
+	C:\Windows\bfsvc.exe
+	C:\Windows\bootstat.dat
+	C:\Windows\comsetup.log
+	C:\Windows\diagerr.xml
+	C:\Windows\diagwrn.xml
 
-List of files in "C:\Windows\System32"
-C:\Windows\System32\7B296FB0-376B-497e-B012-9C450E1B7327-5P-0.C7483456-A289-439d-8115-601632D005A0
-C:\Windows\System32\7B296FB0-376B-497e-B012-9C450E1B7327-5P-1.C7483456-A289-439d-8115-601632D005A0
-C:\Windows\System32\@OpenWithToastLogo.png
-C:\Windows\System32\@TileEmpty1x1Image.png
-C:\Windows\System32\accessibilitycpl.dll
+	List of files in "C:\Windows\System32"
+	C:\Windows\System32\7B296FB0-376B-497e-B012-9C450E1B7327-5P-0.C7483456-A289-439d-8115-601632D005A0
+	C:\Windows\System32\7B296FB0-376B-497e-B012-9C450E1B7327-5P-1.C7483456-A289-439d-8115-601632D005A0
+	C:\Windows\System32\@OpenWithToastLogo.png
+	C:\Windows\System32\@TileEmpty1x1Image.png
+	C:\Windows\System32\accessibilitycpl.dll
